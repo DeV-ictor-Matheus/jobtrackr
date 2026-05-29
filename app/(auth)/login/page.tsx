@@ -59,6 +59,10 @@ export default function LoginPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   async function handleGoogleSignIn() {
     setIsLoading(true);
     setErrorMessage(null);
@@ -92,7 +96,14 @@ export default function LoginPage() {
         }`}
       >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <BrandLogo />
+          <button
+            type="button"
+            onClick={scrollToTop}
+            aria-label="Voltar ao topo"
+            className="cursor-pointer rounded-lg no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+          >
+            <BrandLogo />
+          </button>
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <a
