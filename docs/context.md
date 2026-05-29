@@ -162,11 +162,11 @@ O JobTrackr usa **exclusivamente login com Google OAuth via Supabase Auth**. Ess
 - [x] Estrutura de pastas criada
 - [x] Schema SQL executado no Supabase (tabela applications + RLS)
 - [x] Repositório no GitHub configurado
-- [ ] Página de login com Google OAuth
-- [ ] Layout do dashboard com sidebar
-- [ ] Board Kanban
-- [ ] CRUD de candidaturas
-- [ ] Dashboard com gráficos
+- [x] Página de login com Google OAuth
+- [x] Layout do dashboard com sidebar
+- [x] Board Kanban
+- [x] CRUD de candidaturas
+- [x] Dashboard com gráficos
 
 ---
 
