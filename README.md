@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JobTrackr
 
-## Getting Started
+Aplicação web para organizar candidaturas de emprego. Acompanhe o dia a dia das suas aplicações em um feed claro e objetivo — sem precisar ficar clicando em diversos lugares para encontrar a vaga que aplicou.
 
-First, run the development server:
+<p align="center">
+  <a href="https://jobtrackr-gray.vercel.app">🚀 Acessar o app</a>
+  ·
+  <a href="https://github.com/DeV-ictor-Matheus/jobtrackr/issues">📋 Reportar bug</a>
+  ·
+  <a href="https://github.com/DeV-ictor-Matheus/jobtrackr/issues">💡 Sugerir feature</a>
+</p>
+
+---
+
+## Sobre o projeto
+
+Quando a pessoa se candidata a muitas vagas ao mesmo tempo, perde o controle de onde aplicou, por qual plataforma, em qual etapa está cada processo e quando fazer follow-up. O JobTrackr resolve isso com um board Kanban simples e um dashboard de métricas.
+
+## Stack
+
+| Camada       | Tecnologia                                            |
+| ------------ | ----------------------------------------------------- |
+| Framework    | Next.js 14 com App Router                             |
+| Linguagem    | TypeScript                                            |
+| Estilo       | Tailwind CSS + shadcn/ui (preset Nova)                |
+| Backend/Auth | Supabase (PostgreSQL + Auth Google OAuth + RLS)       |
+| Gráficos     | Recharts                                              |
+| Ícones       | Lucide React                                          |
+| Utilitários  | date-fns                                              |
+| Deploy       | Vercel                                                |
+
+## Começando
+
+Primeiro, instale as dependências e rode o servidor de desenvolvimento:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Variáveis de ambiente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Crie um arquivo `.env.local` com as chaves do Supabase:
 
-## Learn More
+```bash
+NEXT_PUBLIC_SUPABASE_URL=sua-url-do-supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-anon
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O app está em produção na Vercel: [https://jobtrackr-gray.vercel.app](https://jobtrackr-gray.vercel.app)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contribuindo
 
-## Deploy on Vercel
+Encontrou um bug ou tem uma ideia? Abra uma issue em [github.com/DeV-ictor-Matheus/jobtrackr/issues](https://github.com/DeV-ictor-Matheus/jobtrackr/issues).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Repositório
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[https://github.com/DeV-ictor-Matheus/jobtrackr](https://github.com/DeV-ictor-Matheus/jobtrackr)
+
+---
+
+<p align="center">
+  Feito por <a href="https://github.com/DeV-ictor-Matheus">DeV-ictor-Matheus</a>
+</p>
