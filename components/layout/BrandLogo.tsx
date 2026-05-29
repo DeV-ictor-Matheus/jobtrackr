@@ -1,6 +1,6 @@
 import { Briefcase, Check } from "lucide-react";
 
-type BrandLogoSize = "sm" | "lg";
+type BrandLogoSize = "sm" | "lg" | "xl";
 
 interface BrandLogoProps {
   size?: BrandLogoSize;
@@ -19,11 +19,18 @@ const sizeStyles: Record<
     text: "text-lg",
   },
   lg: {
-    box: "size-10",
-    icon: "size-5.5",
-    badge: "size-5",
-    check: "size-3",
-    text: "text-xl",
+    box: "size-12",
+    icon: "size-7",
+    badge: "size-5.5",
+    check: "size-3.5",
+    text: "text-2xl",
+  },
+  xl: {
+    box: "size-16",
+    icon: "size-9",
+    badge: "size-6",
+    check: "size-4",
+    text: "text-3xl",
   },
 };
 

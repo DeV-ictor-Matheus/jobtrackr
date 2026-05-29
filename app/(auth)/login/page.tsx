@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Code2, LayoutGrid, ListChecks, type LucideIcon } from "lucide-react";
 
 import BrandLogo from "@/components/layout/BrandLogo";
 import BoardPreview from "@/components/board/BoardPreview";
@@ -8,8 +9,36 @@ import { createClient } from "@/lib/supabase/client";
 
 const navLinks = [
   { label: "Funcionalidades", href: "#features", external: false },
-  { label: "Sobre", href: "#about", external: false },
-  { label: "GitHub", href: "https://github.com", external: true },
+  { label: "Sobre", href: "#sobre", external: false },
+  {
+    label: "GitHub",
+    href: "https://github.com/DeV-ictor-Matheus/jobtrackr",
+    external: true,
+  },
+];
+
+interface AboutCard {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const aboutCards: AboutCard[] = [
+  {
+    icon: LayoutGrid,
+    title: "Tudo em um lugar",
+    description: "Chega de planilha e post-it espalhados.",
+  },
+  {
+    icon: ListChecks,
+    title: "Acompanhe cada etapa",
+    description: "Do envio à oferta, sem perder o controle.",
+  },
+  {
+    icon: Code2,
+    title: "Feito por dev, para dev",
+    description: "Open source e gratuito.",
+  },
 ];
 
 const ctaButtonStyles =
@@ -154,6 +183,28 @@ export default function LoginPage() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="sobre" className="scroll-mt-24 pb-24">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Por que o JobTrackr?
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {aboutCards.map(({ icon: Icon, title, description }) => (
+              <div
+                key={title}
+                className="flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-[#111111] p-6"
+              >
+                <span className="flex size-10 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400">
+                  <Icon className="size-5" />
+                </span>
+                <h3 className="text-lg font-semibold text-neutral-50">
+                  {title}
+                </h3>
+                <p className="text-sm text-zinc-400">{description}</p>
+              </div>
+            ))}
           </div>
         </section>
       </main>
