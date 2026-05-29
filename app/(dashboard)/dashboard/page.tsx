@@ -1,11 +1,5 @@
 import { Briefcase, Clock, Trophy, XCircle } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import ApplicationsTrendChart from "@/components/dashboard/ApplicationsTrendChart";
 import StatCard from "@/components/dashboard/StatCard";
 import StatusBarChart from "@/components/dashboard/StatusBarChart";
@@ -34,9 +28,16 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="font-heading text-xl font-semibold">Painel</h1>
+      <div className="flex flex-col gap-1">
+        <h1 className="text-2xl font-bold tracking-tight text-neutral-50">
+          Painel
+        </h1>
+        <p className="text-sm text-zinc-400">
+          Uma visão geral de todas as suas candidaturas.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <StatCard label="Total" value={summary.total} icon={Briefcase} />
         <StatCard label="Em andamento" value={summary.inProgress} icon={Clock} />
         <StatCard label="Ofertas" value={summary.offers} icon={Trophy} />
@@ -44,28 +45,24 @@ export default async function DashboardPage() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle>Candidaturas por status</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <StatusBarChart data={statusChartData} />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Candidaturas por mês</CardTitle>
-          </CardHeader>
-          <CardContent>
-            {trendData.length > 0 ? (
-              <ApplicationsTrendChart data={trendData} />
-            ) : (
-              <p className="py-12 text-center text-sm text-muted-foreground">
-                Ainda não há candidaturas para exibir.
-              </p>
-            )}
-          </CardContent>
-        </Card>
+        <section className="flex flex-col gap-4 rounded-xl border border-zinc-800 bg-[#111111] p-5">
+          <h2 className="text-sm font-medium text-neutral-100">
+            Candidaturas por status
+          </h2>
+          <StatusBarChart data={statusChartData} />
+        </section>
+        <section className="flex flex-col gap-4 rounded-xl border border-zinc-800 bg-[#111111] p-5">
+          <h2 className="text-sm font-medium text-neutral-100">
+            Candidaturas por mês
+          </h2>
+          {trendData.length > 0 ? (
+            <ApplicationsTrendChart data={trendData} />
+          ) : (
+            <p className="py-12 text-center text-sm text-zinc-400">
+              Ainda não há candidaturas para exibir.
+            </p>
+          )}
+        </section>
       </div>
     </div>
   );

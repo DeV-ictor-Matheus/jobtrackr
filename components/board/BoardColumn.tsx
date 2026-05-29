@@ -28,8 +28,8 @@ export default function BoardColumn({
     <div
       ref={setNodeRef}
       className={cn(
-        "flex w-72 shrink-0 flex-col gap-3 rounded-xl bg-muted/40 p-3 transition-colors",
-        isOver && "bg-muted",
+        "flex w-80 shrink-0 flex-col gap-4 rounded-xl border border-zinc-800 bg-[#111111] p-4 transition-colors",
+        isOver && "border-indigo-500/60 bg-[#161616]",
       )}
     >
       <ColumnHeader
@@ -37,7 +37,7 @@ export default function BoardColumn({
         count={applications.length}
         dotClassName={dotClassName}
       />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         {applications.map((application) => (
           <DraggableApplicationCard
             key={application.id}

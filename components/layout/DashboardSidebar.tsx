@@ -1,5 +1,6 @@
-import { Briefcase } from "lucide-react";
+import Link from "next/link";
 
+import BrandLogo from "@/components/layout/BrandLogo";
 import SidebarNav from "@/components/layout/SidebarNav";
 import SignOutButton from "@/components/layout/SignOutButton";
 
@@ -9,22 +10,21 @@ interface DashboardSidebarProps {
 
 export default function DashboardSidebar({ userEmail }: DashboardSidebarProps) {
   return (
-    <aside className="hidden w-64 shrink-0 flex-col border-r border-sidebar-border bg-sidebar md:flex">
-      <div className="flex items-center gap-2 px-4 py-4">
-        <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-          <Briefcase className="size-4" />
-        </span>
-        <span className="font-heading text-base font-semibold text-sidebar-foreground">
-          JobTrackr
-        </span>
+    <aside className="hidden w-64 shrink-0 flex-col border-r border-zinc-800 bg-[#111111] md:flex">
+      <div className="flex h-16 items-center border-b border-zinc-800 px-5">
+        <Link
+          href="/board"
+          aria-label="Ir para o board"
+          className="cursor-pointer rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+        >
+          <BrandLogo size="lg" />
+        </Link>
       </div>
-      <div className="flex-1 px-2">
+      <div className="flex-1 px-3 py-4">
         <SidebarNav />
       </div>
-      <div className="border-t border-sidebar-border p-2">
-        <p className="truncate px-3 py-1 text-xs text-sidebar-foreground/60">
-          {userEmail}
-        </p>
+      <div className="border-t border-zinc-800 p-3">
+        <p className="truncate px-3 py-1 text-xs text-zinc-400">{userEmail}</p>
         <SignOutButton />
       </div>
     </aside>

@@ -25,7 +25,7 @@ export default function SignOutButton() {
   return (
     <Button
       variant="ghost"
-      className="w-full justify-start"
+      className="w-full justify-start text-zinc-400 hover:bg-zinc-800/60 hover:text-neutral-100"
       onClick={handleSignOut}
     >
       <LogOut className="size-4" />

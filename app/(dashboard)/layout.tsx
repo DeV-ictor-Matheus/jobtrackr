@@ -26,11 +26,11 @@ export default async function DashboardLayout({
   const userEmail = user.email ?? "";
 
   return (
-    <div className="flex min-h-svh">
+    <div className="flex min-h-svh bg-[#0a0a0a] font-[system-ui,sans-serif] text-neutral-100">
       <DashboardSidebar userEmail={userEmail} />
       <div className="flex min-w-0 flex-1 flex-col">
         <MobileNav userEmail={userEmail} />
-        <main className="flex-1 p-4 md:p-6">{children}</main>
+        <main className="flex-1 p-4 md:p-8">{children}</main>
       </div>
     </div>
   );

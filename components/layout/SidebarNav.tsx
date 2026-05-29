@@ -24,8 +24,8 @@ export default function SidebarNav({ onNavigate }: SidebarNavProps) {
             href={href}
             onClick={onNavigate}
             className={cn(
-              "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
-              isActive && "bg-sidebar-accent text-sidebar-accent-foreground",
+              "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-indigo-500/10 hover:text-neutral-100",
+              isActive && "bg-indigo-500/10 text-indigo-400",
             )}
           >
             <Icon className="size-4" />

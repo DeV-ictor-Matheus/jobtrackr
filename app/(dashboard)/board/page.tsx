@@ -10,8 +10,15 @@ export default async function BoardPage() {
   const applications = await getApplications(supabase);
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="font-heading text-xl font-semibold">Candidaturas</h1>
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-1">
+        <h1 className="text-2xl font-bold tracking-tight text-neutral-50">
+          Candidaturas
+        </h1>
+        <p className="text-sm text-zinc-400">
+          Acompanhe cada etapa do seu processo seletivo.
+        </p>
+      </div>
       <BoardClient
         userId={user?.id ?? ""}
         initialApplications={applications ?? []}

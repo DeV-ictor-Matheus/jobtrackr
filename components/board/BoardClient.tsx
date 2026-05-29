@@ -110,17 +110,21 @@ export default function BoardClient({
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center justify-between gap-4">
         {errorMessage ? (
-          <p className="text-sm text-destructive" role="alert">
+          <p className="text-sm text-red-400" role="alert">
             {errorMessage}
           </p>
         ) : (
           <span />
         )}
-        <Button onClick={openCreateModal}>
-          <Plus className="size-4" />
+        <Button
+          onClick={openCreateModal}
+          size="lg"
+          className="bg-indigo-500 text-white shadow-lg shadow-indigo-500/25 transition-all hover:scale-105 hover:bg-indigo-600 hover:shadow-indigo-500/40"
+        >
+          <Plus className="size-5" />
           Nova candidatura
         </Button>
       </div>
@@ -129,7 +133,7 @@ export default function BoardClient({
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       >
-        <div className="flex gap-4 overflow-x-auto pb-2">
+        <div className="flex gap-6 overflow-x-auto pb-2">
           {boardColumns.map(({ status, label, dotClassName }) => (
             <BoardColumn
               key={status}
